@@ -26,6 +26,18 @@ other empty deques).
 ``public int size()`` which returns the number of elements in the deque.
 
 ``public void addLeft(T item)`` which adds the specified item to the _left_ end
-of the queue.
+of the dequeue.
 
-``
+``public void addRight(T item)`` which adds the specified item to the _right_
+end of the deque.
+
+``public T removeLeft()`` which returns and removes the leftmost item in the
+deque.
+
+``public T removeRight()`` which returns and removes the rightmost item in the
+deque.
+
+``public Iterator<T> iterator()`` which returns an iterator over the elements
+of the deque. **Important**: for the sake of this project the _left_ end is
+considered to be the start of the deque and the right the end. Hence an
+iterator over the deque should return the elements in _left-to-right_ order.
