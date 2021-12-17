@@ -18,27 +18,27 @@ Your Deque must be fully generic (it must make sufficient use of generic type
 variables in its definition, and implement the ``Iterable<T>`` interface in
 addition to the following API:
 
-``public Deque()`` which constructs an empty Deque of type T.
+`public Deque()` which constructs an empty Deque of type T.
 
-``public boolean isEmpty()`` which returns whether or not the Deque is currently
+`public boolean isEmpty()` which returns whether or not the Deque is currently
 empty (contains no elements). This is true for a newly-initialized Deque (and
 other empty deques).
 
-``public int size()`` which returns the number of elements in the deque.
+`public int size()` which returns the number of elements in the deque.
 
-``public void addLeft(T item)`` which adds the specified item to the _left_ end
+`public void addLeft(T item)` which adds the specified item to the _left_ end
 of the dequeue.
 
-``public void addRight(T item)`` which adds the specified item to the _right_
+`public void addRight(T item)` which adds the specified item to the _right_
 end of the deque.
 
-``public T removeLeft()`` which returns and removes the leftmost item in the
+`public T removeLeft()` which returns and removes the leftmost item in the
 deque.
 
-``public T removeRight()`` which returns and removes the rightmost item in the
+`public T removeRight()` which returns and removes the rightmost item in the
 deque.
 
-``public Iterator<T> iterator()`` which returns an iterator over the elements
+`public Iterator<T> iterator()` which returns an iterator over the elements
 of the deque. **Important**: for the sake of this project the _left_ end is
 considered to be the start of the deque and the right the end. Hence an
 iterator over the deque should return the elements in _left-to-right_ order.
@@ -96,9 +96,36 @@ rules:
 stack. This will be the evaluation of the expression.
 
 ### Syntax Errors
-Your compiler should also detect compile-time syntax errors. Fortunately, this is pretty easy
-to do. There are _three_ classes of compile errors that could be encountered:
+Your compiler should also detect compile-time syntax errors. Fortunately, this
+is pretty easy to do. There are _three_ classes of compile errors that could be
+encountered:
 
 1. Illegal character (like a letter or something)
 2. Illegal expression (characters are correct but the expression doesn't follow
-the syntax rules listed above.
+the syntax rules listed above.)
+
+The first syntax error is found by adding a substep to step 2 of the algorthm
+in the previous section: If the character is neither a number or an operator,
+throw an `IllegalArgumentException` with a message specifying the illegal
+character.
+
+The second syntax error is found if, at the end of the evaluation, the stacks
+are not both empty (except for one value in the number stack), _or_ one stack
+is empty when you attempt to pop something from it. Throw an 
+`IllegalArgumentException`in both of these cases. You can read more about this
+exception in its corresponding [javadoc](https://docs.oracle.com/javase/7/docs/api/java/lang/IllegalArgumentException.html)
+
+### API
+
+Your compiler needs to have only one method, namely `public static double evaluate(String expression)`
+which takes in a String formatted according to the syntax rules above and
+returns its value as a double.
+
+## Conclusion
+This is the most complicated project we've had to date (actually its kind of
+_two_ projects). However, if you're caught up on the class notes and have a
+stack already coded you should be able to complete each of these in a week and
+have the whole thing submitted by the end of the semester. Of course, you'll
+need to use wisely the several hours of class time we have left, too.
+
+Starter code is provided for both of the required classes.
