@@ -64,7 +64,7 @@ can avoid them by **using a linked list!!!** You're welcome.
 
 The second part of your project is to implement a version of Dijkstra's
 Algorithm for the evaluation of algebraic expressions. Specifically, you will
-write a class called ``Calculator`` which compute the value of an arithmetic
+write a class called ``Calculator`` which computes the value of an arithmetic
 expression subject to the following syntax rules.
 
 1. Only _binary_ operations are allowed.
