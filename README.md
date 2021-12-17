@@ -128,4 +128,5 @@ stack already coded you should be able to complete each of these in a week and
 have the whole thing submitted by the end of the semester. Of course, you'll
 need to use wisely the several hours of class time we have left, too.
 
-Starter code is provided for both of the required classes.
+Starter code is provided for both of the required classes. In my benevolence I
+have also coded a `Stack` class for your enjoyment and use.
